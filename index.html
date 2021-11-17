@@ -16,9 +16,7 @@
         <input id='text-input' type="text" class='inserir' placeholder="Adicionar nova tarefa">
         <button onclick="add()">Adicionar</button>
         <h3>Lista</h3>
-        <ul id='lista'>
-
-        </ul>
+        <ul id='lista'></ul>
 
 
         <button class='limpar' onclick="reset()">Limpar lista</button>
@@ -27,21 +25,24 @@
     <script>
         const input = document.getElementById('text-input')
         const ul = document.getElementById('lista')
-        var numero = document.getElementById('atual').innerText = 0
+        // var numero = document.getElementById('atual').innerText = 0
+        const atual = document.getElementById('atual')
 
         function add() {
             const texto = input.value
+            // se não tiver (!) texto (input.value) então caia fora da função (return)
+            if (!texto) return
+
             const li = document.createElement('li')
             li.innerText = texto
             ul.appendChild(li)
             input.value = ''
-                ++numero.value
-
-
+            atual.innerText = ul.childElementCount
         }
 
         function reset() {
             ul.innerText = ''
+            atual.innerText = ul.childElementCount
         }
     </script>
 </body>
