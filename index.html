@@ -17,22 +17,31 @@
         <button onclick="add()">Adicionar</button>
         <h3>Lista</h3>
         <ul id='lista'>
-            <li>1</li>
+
         </ul>
 
 
-        <button class='limpar'>Limpar lista</button>
+        <button class='limpar' onclick="reset()">Limpar lista</button>
+        <h3 id='atual'>0</h3>
     </div>
     <script>
         const input = document.getElementById('text-input')
-        const lista = document.getElementById('lista')
+        const ul = document.getElementById('lista')
+        var numero = document.getElementById('atual').innerText = 0
 
         function add() {
             const texto = input.value
             const li = document.createElement('li')
             li.innerText = texto
             ul.appendChild(li)
+            input.value = ''
+                ++numero.value
 
+
+        }
+
+        function reset() {
+            ul.innerText = ''
         }
     </script>
 </body>
