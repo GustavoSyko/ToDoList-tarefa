@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel='stylesheet' href='estilos.css'>
+</head>
+
+<body>
+    <h1 class='titulo'>To Do List</h1>
+    <br>
+    <div id='container'>
+        <input id='text-input' type="text" class='inserir' placeholder="Adicionar nova tarefa">
+        <button onclick="add()">Adicionar</button>
+        <h3>Lista</h3>
+        <ul id='lista'>
+            <li>1</li>
+        </ul>
+
+
+        <button class='limpar'>Limpar lista</button>
+    </div>
+    <script>
+        const input = document.getElementById('text-input')
+        const lista = document.getElementById('lista')
+
+        function add() {
+            const texto = input.value
+            const li = document.createElement('li')
+            li.innerText = texto
+            ul.appendChild(li)
+
+        }
+    </script>
+</body>
+
+</html>
